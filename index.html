@@ -25,6 +25,8 @@
                 <h1>Hi, I'm <span>Marcus</span> <br>from South Africa</h1>
             </div>
         </div>
+        <br>
+        <br>
         <!-- ABOUT -->
         <div id="about">
             <div class="container">
@@ -34,22 +36,54 @@
                     </div>
                     <div class="about-col-2">
                         <h1 class="sub-title">About Me</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi id magni voluptas est voluptatem excepturi pariatur numquam animi aspernatur. Id consectetur dicta, maiores corporis quo atque nobis sequi quia iure, animi nihil ad ullam voluptates consequatur unde! Perspiciatis reprehenderit sit magni nisi deserunt! Dignissimos rem delectus quis excepturi error dolorem vel dolores, sapiente eius commodi atque incidunt similique voluptates. At labore illum nihil maxime deserunt ex quaerat adipisci, iusto sit sunt odio doloribus fugiat facere cum animi ad, tenetur exercitationem voluptas beatae reiciendis deleniti quod cupiditate quo asperiores! Aspernatur assumenda, odio enim voluptatem earum ducimus non. Ea similique est modi!</p>
+                        <br>
+                        <p id="aboutParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi id magni voluptas est voluptatem excepturi pariatur numquam animi aspernatur. Id consectetur dicta, maiores corporis quo atque nobis sequi quia iure, animi nihil ad ullam voluptates consequatur unde! Perspiciatis reprehenderit sit magni nisi deserunt! Dignissimos rem delectus quis excepturi error dolorem vel dolores, sapiente eius commodi atque incidunt similique voluptates. At labore illum nihil maxime deserunt ex quaerat adipisci, iusto sit sunt odio doloribus fugiat facere cum animi ad, tenetur exercitationem voluptas beatae reiciendis deleniti quod cupiditate quo asperiores! Aspernatur assumenda, odio enim voluptatem earum ducimus non. Ea similique est modi!</p>
                         <div class="tab-titles">
-                            <p class="tab-links active link">Skills</p>
-                            <p class="tab-links">Experience</p>
-                            <p class="tab-links">Education</p>
+                            <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('Education')">Education</p>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents active-tab" id="Skills">
                             <ul>
-                                <li><span>BI</span><br>Transforming Data</li>
-                                <li><span>Web Development</span><br>Transforming Data</li>
-                                <li><span>Database Administration</span><br>Transforming Data</li>
+                                <li><span class="aboutInfoGap">BI</span><br>Transforming Data</li>
+                                <li><span class="aboutInfoGap">Web Development</span><br>Transforming Data</li>
+                                <li><span class="aboutInfoGap">Database Administration</span><br>Transforming Data</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Experience">
+                            <ul>
+                                <li><span class="aboutInfoGap">2022 - present</span><br>Tutoring English, Afrikaans and Computer Studies</li>
+                                <li><span class="aboutInfoGap">2024</span><br>Internship at Toppan Gravity</li>
+                                <li><span class="aboutInfoGap">2020 - 2021</span><br>Waitered at Tribeca Coffee Company</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Education">
+                            <ul>
+                                <li><span class="aboutInfoGap">2023 - 2026</span><br>Bachelors of Computing at Belgium Campus</li>
+                                <li><span class="aboutInfoGap">2022</span><br>Certificate in Systems Development at Belgium Campus</li>
+                                <li><span class="aboutInfoGap">2017 - 2021</span><br>NSC at Pretoria Boys High School</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links")
+            var tabcontents = document.getElementsByClassName("tab-contents")
+
+            function opentab(tabname){
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+
 </body>
 </html>
